@@ -6,3 +6,6 @@
 
 # .vscode directory
 /.vscode
+
+# PNG pictures
+*.png
