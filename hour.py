@@ -24,7 +24,7 @@ def plot(hours, filename):
 
     plt.title(f"lastfm's scrobbles (@{filename})")
     plt.xlabel("Hour of day")
-    plt.ylabel("Number of songs listened")
+    plt.ylabel("Number of scrobbles")
     plt.savefig(filename, dpi=120)
 
 
