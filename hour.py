@@ -19,7 +19,7 @@ def plot(hours, filename):
     x, y = zip(*hours)
 
     plt.figure()
-    plt.plot(list(x), list(y))
+    plt.plot(list(x), list(y), marker='o')
     plt.xticks(list(range(24)))
 
     plt.title(f"lastfm's scrobbles (@{filename})")
