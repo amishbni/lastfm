@@ -9,7 +9,7 @@ git clone https://github.com/amirashabani/lastfm
 cd lastfm
 ```
 
-Go to https://benjaminbenben.com/lastfm-to-csv, download the CSV file into the directory of this repository, install the libraries and run the code on that file:
+Go to https://benjaminbenben.com/lastfm-to-csv, download the CSV file into the directory of this repository, install the libraries and run the code on that file (here `amirashabani.csv`):
 
 ```bash
 python -m venv venv
