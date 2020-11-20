@@ -1,5 +1,6 @@
 from collections import Counter
 import pandas as pd
+import matplotlib.pyplot as plt
 import sys
 
 
@@ -13,6 +14,14 @@ def get_hours(address):
     return result
 
 
+def plot(hours):
+    x, y = zip(*hours)
+
+    plt.figure()
+    plt.plot(list(x), list(y))
+    plt.savefig("chart.png", dpi=120)
+
+
 if __name__ == "__main__":
     args = sys.argv
     if len(args) < 2:
@@ -20,4 +29,4 @@ if __name__ == "__main__":
         exit()
     
     hours = get_hours(args[1])
-    print(hours)
+    plot(hours)
