@@ -21,6 +21,8 @@ def plot(hours, filename):
     plt.figure()
     plt.plot(list(x), list(y))
     plt.xticks(list(range(24)))
+
+    plt.title("lastfm's scrobbles")
     plt.xlabel("Hour of day")
     plt.ylabel("Number of songs listened")
     plt.savefig(filename, dpi=120)
