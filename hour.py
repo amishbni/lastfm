@@ -2,6 +2,7 @@ from collections import Counter
 import pandas as pd
 import matplotlib.pyplot as plt
 import sys
+import os
 
 
 def get_hours(address):
@@ -14,12 +15,12 @@ def get_hours(address):
     return result
 
 
-def plot(hours):
+def plot(hours, filename):
     x, y = zip(*hours)
 
     plt.figure()
     plt.plot(list(x), list(y))
-    plt.savefig("chart.png", dpi=120)
+    plt.savefig(filename, dpi=120)
 
 
 if __name__ == "__main__":
@@ -27,6 +28,8 @@ if __name__ == "__main__":
     if len(args) < 2:
         print("Specify CSV file.")
         exit()
+
+    filename = os.path.splitext(args[1])[0]
     
     hours = get_hours(args[1])
-    plot(hours)
+    plot(hours, filename)
