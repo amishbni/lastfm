@@ -1,2 +1,5 @@
 # CSV files
 *.csv
+
+# Virtual Environment directory
+/venv
