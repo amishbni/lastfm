@@ -1,6 +1,7 @@
+from collections import Counter
 import pandas as pd
 import sys
-from collections import Counter
+
 
 def get_hours(address):
     columns = ["artist", "album", "track", "date"]
@@ -10,6 +11,7 @@ def get_hours(address):
     result = sorted(count, key=lambda tup: tup[0])
 
     return result
+
 
 if __name__ == "__main__":
     args = sys.argv
