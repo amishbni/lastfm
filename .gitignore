@@ -1,6 +1,9 @@
 # CSV files
 *.csv
 
+# PNG files
+*.png
+
 # Virtual Environment directory
 /venv
 
