@@ -23,13 +23,19 @@ colormaps = ['viridis', 'plasma', 'inferno', 'magma', 'cividis', 'binary', 'gist
 
 if len(args) == 3:
 	colormap = args[2]
+	if colormap == "black":
+		color_func = lambda *args, **kwargs: "black"
+	else:
+		color_func = None
 else:
 	colormap = choice(colormaps)
+	color_func = None
 print(f"Colormap: {colormap}")
 
 wordcloud = WordCloudFa(
 	prefer_horizontal=1,
 	background_color="white",
+	color_func=color_func,
 	colormap=colormap,
 	width=2048,
 	height=2048
