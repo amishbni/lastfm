@@ -1,9 +1,9 @@
+from os import path
 from wordcloud_fa import WordCloudFa
 import pandas as pd
 import arabic_reshaper as ar
 import re
 import sys
-from os import path
 
 args = sys.argv
 if len(args) < 2:
@@ -20,7 +20,8 @@ top = dict(zip(top_series.index, top_series))
 
 wordcloud = WordCloudFa(
 	prefer_horizontal=1,
-	background_color='white',
+	background_color="white",
+	colormap="magma",
 	width=2048,
 	height=2048
 ).generate_from_frequencies(top)
