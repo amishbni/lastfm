@@ -42,4 +42,4 @@ wordcloud = WordCloudFa(
 ).generate_from_frequencies(top)
 
 image = wordcloud.to_image()
-image.save(f"{username}.png")
+image.save(f"{username}_top_artists_wordcloud.png")
