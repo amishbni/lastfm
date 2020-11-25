@@ -19,9 +19,12 @@ data = pd.read_csv(csv_address, header=None, names=columns)
 top_series = data["artist"].value_counts()[:50]
 top = dict(zip(top_series.index, top_series))
 
-colormaps = ['viridis', 'plasma', 'inferno', 'magma', 'cividis', 'binary', 'gist_yarg', 'gist_gray', 'gray', 'bone', 'pink', 'spring', 'summer', 'autumn', 'winter', 'cool', 'Wistia', 'hot', 'afmhot', 'gist_heat', 'copper']
+colormaps = ['viridis', 'plasma', 'inferno', 'magma', 'cividis', 'binary', 'gist_yarg', 'gist_gray', 'gray', 'bone', 'pink', 'spring', 'summer', 'autumn', 'winter', 'cool', 'Wistia', 'hot', 'gist_heat', 'copper']
 
-colormap = choice(colormaps)
+if len(args) == 3:
+	colormap = args[2]
+else:
+	colormap = choice(colormaps)
 print(f"Colormap: {colormap}")
 
 wordcloud = WordCloudFa(
