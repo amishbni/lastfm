@@ -1,4 +1,5 @@
 import pandas as pd
+import color_codes as cc
 import sys
 import os
 
@@ -19,7 +20,7 @@ def main():
     df = read_df(args[1])
     
     total_scrobbles = len(df.index)
-    print(f"Total Scrobbles: {total_scrobbles}")
+    print(f"Total Scrobbles: {cc.BLUE}{total_scrobbles}{cc.NORMAL}")
 
 
 if __name__ == "__main__":
