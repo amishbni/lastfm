@@ -75,6 +75,13 @@ def main():
     )
     print(most_scrobbles_text)
 
+    average_scrobbles = total_scrobbles / days
+    average_scrobbles_text = (
+        "Average scrobbles per day: "
+        f"{cc.BLUE}{average_scrobbles:.2f}{cc.NORMAL}"
+    )
+    print(average_scrobbles_text)
+
 
 if __name__ == "__main__":
     main()
