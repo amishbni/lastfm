@@ -29,6 +29,13 @@ def last_scrobble(df):
     return date
 
 
+def scrobble_days(df):
+    days = df["date"].apply(lambda x: x.strftime("%Y-%m-%d"))
+    unique_days = set(days.tolist())
+
+    return len(unique_days)
+
+
 def main():
     args = sys.argv
     if len(args) < 2:
@@ -45,6 +52,9 @@ def main():
 
     last = last_scrobble(df)
     print(f"Last scrobble: {cc.MAGENTA}{last}{cc.NORMAL}")
+
+    days = scrobble_days(df)
+    print(f"Days with at least one scrobble: {cc.BLUE}{days}{cc.NORMAL}")
 
 
 if __name__ == "__main__":
