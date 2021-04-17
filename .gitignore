@@ -9,3 +9,7 @@
 
 # .vscode directory
 /.vscode
+
+# pycache directory
+/__pycache__
+
