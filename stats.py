@@ -3,6 +3,7 @@ import color_codes as cc
 import constants as c
 import sys
 from datetime import datetime as dt
+from collections import Counter
 
 
 def read_df(address):
@@ -36,6 +37,15 @@ def scrobble_days(df):
     return len(unique_days)
 
 
+def most_scrobbles_in_a_day(df):
+    days = df["date"].apply(lambda x: x.strftime("%B %d, %Y"))
+    unique_days = Counter(days).most_common(1)
+    date = unique_days[0][0]
+    count = unique_days[0][1]
+
+    return (count, date)
+
+
 def main():
     args = sys.argv
     if len(args) < 2:
@@ -55,6 +65,15 @@ def main():
 
     days = scrobble_days(df)
     print(f"Days with at least one scrobble: {cc.BLUE}{days}{cc.NORMAL}")
+
+    top_day = most_scrobbles_in_a_day(df)
+    most_scrobbles_text = (
+        "Most scrobbles in a day: "
+        f"{cc.BLUE}{top_day[0]}{cc.NORMAL}"
+        " on "
+        f"{cc.MAGENTA}{top_day[1]}{cc.NORMAL}"
+    )
+    print(most_scrobbles_text)
 
 
 if __name__ == "__main__":
