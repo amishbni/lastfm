@@ -1,2 +1,3 @@
 BLUE="\033[94m"
+MAGENTA="\033[35m"
 NORMAL="\033[0m"
