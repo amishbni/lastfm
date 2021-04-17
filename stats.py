@@ -2,7 +2,6 @@ import pandas as pd
 import color_codes as cc
 import constants as c
 import sys
-import os
 from datetime import datetime as dt
 
 
@@ -36,7 +35,6 @@ def main():
         print("Specify CSV file.")
         exit()
 
-    file_name = os.path.splitext(args[1])[0]
     df = read_df(args[1])
 
     total_scrobbles = len(df.index)
