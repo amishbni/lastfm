@@ -40,13 +40,13 @@ def main():
     df = read_df(args[1])
     
     total_scrobbles = len(df.index)
-    print(f"Total Scrobbles: {cc.BLUE}{total_scrobbles}{cc.NORMAL}")
+    print(f"Total scrobbles: {cc.BLUE}{total_scrobbles}{cc.NORMAL}")
 
     first = first_scrobble(df)
-    print(f"First Scrobble: {cc.MAGENTA}{first}{cc.NORMAL}")
+    print(f"First scrobble: {cc.MAGENTA}{first}{cc.NORMAL}")
 
     last = last_scrobble(df)
-    print(f"Last Scrobble: {cc.MAGENTA}{last}{cc.NORMAL}")
+    print(f"Last scrobble: {cc.MAGENTA}{last}{cc.NORMAL}")
 
 
 if __name__ == "__main__":
