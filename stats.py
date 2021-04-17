@@ -38,7 +38,7 @@ def main():
 
     file_name = os.path.splitext(args[1])[0]
     df = read_df(args[1])
-    
+
     total_scrobbles = len(df.index)
     print(f"Total scrobbles: {cc.BLUE}{total_scrobbles}{cc.NORMAL}")
 
